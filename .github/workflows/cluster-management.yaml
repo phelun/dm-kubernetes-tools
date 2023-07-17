@@ -40,3 +40,7 @@ jobs:
         service_account: infra-sa@dm-poc-development.iam.gserviceaccount.com
         create_credentials_file: true
         activate_credentials_file: true
+
+    - name: DeployCertmanager
+      working-directory: cluster-certmanager
+      run: kubectl apply -f .      
