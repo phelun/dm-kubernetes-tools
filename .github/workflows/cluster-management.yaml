@@ -43,4 +43,6 @@ jobs:
 
     - name: DeployCertmanager
       working-directory: cluster-certmanager
-      run: kubectl apply -f .      
+      run: | 
+        gcloud container clusters get-credentials dm-poc-dev --region=europe-west1
+        kubectl apply -f .      
