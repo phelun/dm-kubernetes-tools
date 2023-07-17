@@ -16,7 +16,7 @@ env:
   REPOSITORY_REGION: europe-west1
 
 jobs:
-  fe-svc-build-pipeline:
+  cluster-management-components:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
