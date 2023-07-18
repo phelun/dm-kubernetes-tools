@@ -48,9 +48,16 @@ jobs:
         gcloud container clusters get-credentials dm-poc-dev --region=europe-west1
         kubectl apply -f . 
 
-    - name: DeployCertmanager
+    - name: DeployArgoCD
       working-directory: cluster-cicd
       run: | 
         gcloud components install gke-gcloud-auth-plugin
         gcloud container clusters get-credentials dm-poc-dev --region=europe-west1
         kubectl apply -f .         
+
+    - name: DeployIngressControler
+      working-directory: cluster-nginx-controller
+      run: | 
+        gcloud components install gke-gcloud-auth-plugin
+        gcloud container clusters get-credentials dm-poc-dev --region=europe-west1
+        kubectl apply -f .     
